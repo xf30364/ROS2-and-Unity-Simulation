@@ -55,17 +55,11 @@ include_directories( # 基本都要用，就整个工程都include
 
 
 #添加ros2节点的包
-link_directories(/opt/ros/humble/lib)
-
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
-find_package(rmw)
-find_package(rosidl_typesupport_interface REQUIRED)
-find_package(rosidl_typesupport_cpp REQUIRED)
-find_package(rosidl_typesupport_c REQUIRED)
 
 
 add_subdirectory(src)
@@ -74,14 +68,6 @@ add_executable(aim_nn_demo demo.cpp)
 
 target_include_directories(aim_nn_demo
         PUBLIC
-        ${rclcpp_INCLUDE_DIRS}
-        ${sensor_msgs_INCLUDE_DIRS} 
-        ${std_msgs_INCLUDE_DIRS}
-        # ${cv_bridge_INCLUDE_DIRS} cmake文件并没有指定cv_bridge.h的头文件地址 需手动指定
-        /opt/ros/humble/include/cv_bridge/.
-        ${rmw_INCLUDE_DIRS} 
-        ${rosidl_typesupport_interface_INCLUDE_DIRS} 
-        ${rcl_interfaces_INCLUDE_DIRS}
         ${CAMERA_DRIVER_INCLUDE_DIRS}
         ${CMAKE_SOURCE_DIR}/src/aim_assist_nn
         )
@@ -89,15 +75,7 @@ target_include_directories(aim_nn_demo
 target_link_libraries(aim_nn_demo
         ${CAMERA_DRIVER_LIB}
         armorDetector 
-
-        rclcpp  
-        sensor_msgs__rosidl_typesupport_cpp
-        cv_bridge  
-        rmw   
-        rosidl_runtime_c
-        rosidl_typesupport_cpp 
-        rosidl_typesupport_c
         ${SENSOR_MSGS_LIBRARIES}
-        ${libstatistics_collector_LIBRARIES}
         ) 
+ament_target_dependencies(aim_nn_demo std_msgs sensor_msgs rclcpp cv_bridge)
     
