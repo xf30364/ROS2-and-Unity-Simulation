@@ -1,0 +1,9 @@
+.vs/
+.vscode/
+bin/
+lib/
+build/
+perfdata/
+data/
+videos/**/*
+*.log
