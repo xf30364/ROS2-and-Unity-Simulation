@@ -1,0 +1,21 @@
+set(HUARAY_INCLUDE_DIR /opt/HuarayTech/MVviewer/include)
+set(LIB_NAMES avcodec avfilter avformat avutil GCBase_gcc421_v3_0 GenApi_gcc421_v3_0 
+        ImageConvert log4cpp_gcc421_v3_0 log4cpp Log_gcc421_v3_0 MathParser_gcc421_v3_0 
+        MVSDKGuiQt MVSDK NodeMapData_gcc421_v3_0 postproc RecordVideo swresample swscale 
+        VideoRender x264 XmlParser_gcc421_v3_0)
+set(PATH_NAMES /opt/HuarayTech/MVviewer/lib /opt/HuarayTech/MVviewer/lib/GenICam/bin/Linux64_x64)
+FOREACH(LIB_NAME ${LIB_NAMES})
+    FIND_LIBRARY(HUARAY_LIBRARY NAMES ${LIB_NAME} PATHS ${PATH_NAMES})
+    IF(HUARAY_LIBRARY)
+        SET(HUARAY_LIBRARIES ${HUARAY_LIBRARIES} ${HUARAY_LIBRARY})
+        IF(NOT HUARAY_FIND_QUIETLY)
+            MESSAGE(STATUS "HUARAY Found: ${HUARAY_LIBRARY}")
+        ENDIF(NOT HUARAY_FIND_QUIETLY)
+    ELSE(HUARAY_LIBRARY)
+        IF(HUARAY_FIND_REQUIRED)
+            MESSAGE(FATAL_ERROR "Could not found HUARAY ${HUARAY_LIBRARY}")
+        ENDIF(HUARAY_FIND_REQUIRED)
+    ENDIF(HUARAY_LIBRARY)
+    UNSET(HUARAY_LIBRARY CACHE)
+ENDFOREACH(LIB_NAME)
+SET(HUARAY_FOUND True)
