@@ -4,7 +4,7 @@
 )
 * 由Unity/Windows+ROS2/wsl -> 整体Linux下
 * 由ROS2工程形式 -> C++工程嵌入ROS2节点回调
-* [文件地址](https://github.com/xf30364/ROS2-and-Unity-Simulation.git) 仿真工程为simulation_test，可以自行新建文件夹，将Assets文件夹粘到其中，也可尝试一下完整工程是否有效;Detect为测试的Demo
+* [文件地址](https://github.com/xf30364/ROS2-and-Unity-Simulation.git) 仿真工程为simulation_test，可以自行新建文件夹，将Assets文件夹粘到其中;Detect为测试的Demo
 ##  Unity配置
 1.   [安装 UnityHub](https://unity.cn/tuanjie/releases) 在Unity Hub安装Unity，建议**2022.3.62f3c1**
 2.   利用安装好的unity打开仿真工程文件
