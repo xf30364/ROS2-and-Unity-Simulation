@@ -7,3 +7,9 @@ perfdata/
 data/
 videos/**/*
 *.log
+simulation_test/Library
+simulation_test/Logs
+simulation_test/Packages
+simulation_test/ProjectSettings
+simulation_test/Temp
+simulation_test/UserSettings

@@ -656,7 +656,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356897275}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16ab7d3ca0f50f0749f3b10e16d0ef21, type: 3}
   m_Name: 
@@ -666,6 +666,22 @@ MonoBehaviour:
   frameId: camera_optical_frame
   publishRate: 30
   enableAsyncReadback: 1
+--- !u!114 &356897289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356897275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7480315ad8b3eea7992d031b831846b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  imageTopic: /image_raw
+  frameId: camera_optical_frame
+  publishRate: 100
 --- !u!1 &429188465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4967584005288396373, guid: 2ef63828d7326884ca600f963d5272c3, type: 3}
@@ -11221,6 +11237,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6826029666496964398, guid: 88cc3369f6963e947a035e4d1b1f205d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 356897286}
+    - targetCorrespondingSourceObject: {fileID: 6826029666496964398, guid: 88cc3369f6963e947a035e4d1b1f205d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 356897289}
   m_SourcePrefab: {fileID: 100100000, guid: 88cc3369f6963e947a035e4d1b1f205d, type: 3}
 --- !u!1 &1805219163 stripped
 GameObject:
